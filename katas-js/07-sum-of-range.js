@@ -19,14 +19,13 @@ function range(start, end, step) {
     }
 } 
 
-console.log(range(5, 2, -1));
-
 function sum(array) {
     let sum = 0;
-    for (let n = 0; n < array.length; n++) {
-        sum += array[n];
+
+    for (let n of array) {
+        sum += array[n - 1];
     }
     return sum;
 }
 
-console.log(sum(range(1, 10)));
+console.log(sum(range(1, 10))); 
