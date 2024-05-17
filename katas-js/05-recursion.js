@@ -13,7 +13,7 @@ function recursiveCheckForEven(number) {
     return;
    }
    number -= 2;
-   recursiveCheckForEven( number );
+   recursiveCheckForEven(number);
 }
 
 recursiveCheckForEven( getNumberIsEven );
