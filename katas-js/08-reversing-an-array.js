@@ -13,8 +13,7 @@ console.log(reverseArray(["A", "B", "C"]));
 
 
 function reverseArrayInPlace(array) {
-    let runLength = array.length;
-    for (let n = 0 ; n < runLength ; n++){
+    for (let n = 0 ; n < ( array.length - n ) ; n++){
         array.unshift(array[n * 2]);
     }
     array.length /= 2;
@@ -22,3 +21,5 @@ function reverseArrayInPlace(array) {
 }
 
 console.log(reverseArrayInPlace(["A", "B", "C"]));
+
+//More useful in more situation: 
