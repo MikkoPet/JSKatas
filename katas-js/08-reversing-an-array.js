@@ -9,7 +9,6 @@ function reverseArray(array) {
 
     for (let n of array) {
       newArray.push(oldArray.pop());
-      oldArray.unshift(0);      
     }
     return newArray;
 }
