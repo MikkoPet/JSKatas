@@ -2,9 +2,14 @@
 
 function reverseArray(array) {
     let newArray = [];
+    let oldArray = [];
+    for (let n in array) {
+        oldArray[n] = array[n];
+    }
+
     for (let n of array) {
-      newArray.push(array.pop());
-      array.unshift(0);      
+      newArray.push(oldArray.pop());
+      oldArray.unshift(0);      
     }
     return newArray;
 }
@@ -22,4 +27,3 @@ function reverseArrayInPlace(array) {
 
 console.log(reverseArrayInPlace(["A", "B", "C"]));
 
-//More useful in more situation: 
