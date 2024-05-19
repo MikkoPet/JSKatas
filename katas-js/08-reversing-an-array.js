@@ -3,6 +3,7 @@
 function reverseArray(array) {
     let newArray = [];
     let oldArray = [];
+
     for (let n in array) {
         oldArray[n] = array[n];
     }
@@ -10,6 +11,7 @@ function reverseArray(array) {
     for (let n of array) {
       newArray.push(oldArray.pop());
     }
+    
     return newArray;
 }
 
