@@ -2,29 +2,36 @@
 
 function reverseArray(array) {
     let newArray = [];
-    let oldArray = [];
+    let oldArray= [];
 
     for (let n in array) {
         oldArray[n] = array[n];
     }
 
     for (let n of array) {
-      newArray.push(oldArray.pop());
+        let valueSwapper = oldArray.pop();
+        newArray.push(valueSwapper);
     }
-    
+
     return newArray;
 }
 
-console.log(reverseArray(["A", "B", "C"]));
 
 
 function reverseArrayInPlace(array) {
-    for (let n = 0 ; n < ( array.length - n ) ; n++){
-        array.unshift(array[n * 2]);
+
+    for (let n = 0 ; n < array.length ; n++){
+
+        let valueSwapper = array[n];
+        
+        array.splice(n, 1);
+        array.unshift(valueSwapper);
     }
-    array.length /= 2;
+
     return array;
 }
 
-console.log(reverseArrayInPlace(["A", "B", "C"]));
+let testArray = ["A", "B", "C", "D", "E"];
 
+console.log(reverseArray(testArray));
+console.log(reverseArrayInPlace(testArray));
