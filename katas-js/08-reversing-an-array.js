@@ -1,25 +1,43 @@
 "use strict";
 
 function reverseArray(array) {
+
     let newArray = [];
-    for (let n of array) {
-      newArray.push(array.pop());
-      array.unshift(0);      
+
+    for (let n = 0 ; n < array.length ; n++) {
+
+        let targetValue = array.length - 1 - n;
+
+        let valueSwapper = array[targetValue];
+        newArray.push(valueSwapper);
     }
+
     return newArray;
 }
 
-console.log(reverseArray(["A", "B", "C"]));
-
 
 function reverseArrayInPlace(array) {
-    for (let n = 0 ; n < ( array.length - n ) ; n++){
-        array.unshift(array[n * 2]);
+
+    for (let n = 0 ; n < array.length ; n++){
+
+        let targetValue = array.length - 1 - n ;
+        let valueSwapper = array[targetValue];
+
+        array.splice(targetValue, 1);
+        array.push(valueSwapper);
     }
-    array.length /= 2;
+
     return array;
 }
 
-console.log(reverseArrayInPlace(["A", "B", "C"]));
+let testArray = ["A", "B", "C", "D", "E"];
 
-//More useful in more situation: 
+console.log(reverseArray(testArray));
+console.log(reverseArrayInPlace(testArray));
+
+
+//the capacity for the first function to keep the original array alongside
+//the reversed array makes it more versatile
+//as we can use it in situations where we need only the reversed array
+//as well as situations where we need the original AND reversed array
+//whereas reverseInPlace in this function fundamentally changes the original array
