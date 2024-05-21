@@ -13,10 +13,10 @@ function josephus(n, k) {
     return remainingPrisoners;
 }
 
-josephus(5, 3);
-josephus(6, 2);
-josephus(7, 2);
-josephus(8, 2);
+console.log(josephus(5, 3));
+console.log(josephus(6, 2));
+console.log(josephus(7, 2));
+console.log(josephus(8, 2));
 
 // create array containing n amount of values
 // in while arr.splice[killingSpotThisRound % arr.length] then killingSpotThisRound += k
